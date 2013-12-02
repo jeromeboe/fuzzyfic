@@ -7,8 +7,8 @@ module Fuzzyfic
 		end
 
 		def apply v_left, v_right=nil
-			img_conslusion = @premise.apply v_left, v_right
-			[@conclusion, img_conslusion]
+			alpha = @premise.apply v_left, v_right
+			[@conclusion, alpha]
 		end
 
 	end

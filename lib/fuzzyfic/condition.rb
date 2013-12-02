@@ -25,7 +25,7 @@ module Fuzzyfic
 			when :or
 				[img_left, img_right].max
 			when :not
-				1 - img_left
+				1.0 - img_left
 			end
 		end
 
