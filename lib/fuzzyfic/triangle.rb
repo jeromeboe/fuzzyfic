@@ -7,5 +7,8 @@ module Fuzzyfic
 			@peak = peak
 		end
 
+		def get
+			1
+		end
 	end
 end

@@ -5,10 +5,18 @@ module Fuzzyfic
 			Condition.new self, set, :and
 		end
 
-		# Occurs when no operator is needed
+		def or set
+			Condition.new self, set, :or
+		end
+
+
 		def then set
-			condition = Condition.new self, nil, nil
+			condition = Condition.new self
 			Rule.new condition, set
+		end
+
+		# Must be overriden in sub-classes
+		def get value		
 		end
 
 	end
