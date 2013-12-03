@@ -30,4 +30,13 @@ rules.push service_quality[:excellent].or(food[:delicious]).then tips[:high]
 
 
 # Compute
-Fuzzyfic::Defuzzifier.cog(rules, 10, 10)
+mat = Array.new(10){ Array.new(10){0.0} }
+for i in (0...10)
+	for j in (0...10)
+		v = Fuzzyfic::Defuzzifier.cog(rules, i, j)
+		puts "Nan : "+i.to_s+", "+j.to_s if v.nan?
+		puts "Nil : "+i.to_s+", "+j.to_s if v.nil?
+		mat[i][j] = v
+	end
+end
+p mat

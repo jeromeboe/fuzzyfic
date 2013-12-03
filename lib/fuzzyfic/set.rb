@@ -27,5 +27,9 @@ module Fuzzyfic
 		def get x		
 		end
 
+		def get_in_crop x, alpha
+			[get(x), alpha].min
+		end
+
 	end
 end
