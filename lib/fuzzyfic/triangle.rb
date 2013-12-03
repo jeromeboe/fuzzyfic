@@ -4,7 +4,7 @@ module Fuzzyfic
 	class Triangle < Set
 
 		def initialize support, peak
-			super
+			super()
 			@support = support
 			@peak = peak
 		end
@@ -18,7 +18,7 @@ module Fuzzyfic
 				b = 1.0 - a*@peak
 				return a*x + b
 			elsif x > @peak
-				a = 1.0/(@support.last - @peak)
+				a = -1.0/(@support.last - @peak)
 				b = 1.0 - a*@peak
 				return a*x + b
 			end

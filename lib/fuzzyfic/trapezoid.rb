@@ -4,7 +4,7 @@ module Fuzzyfic
 	class Trapezoid < Set
 
 		def initialize support, kernel
-			super
+			super()
 			@support = support
 			@kernel = kernel
 		end
@@ -18,7 +18,7 @@ module Fuzzyfic
 				b = 1.0 - a*@kernel.first
 				return a*x + b
 			elsif x > @kernel.last
-				a = 1.0/(@support.last - @kernel.last)
+				a = -1.0/(@support.last - @kernel.last)
 				b = 1.0 - a*@kernel.last
 				return a*x + b
 			end

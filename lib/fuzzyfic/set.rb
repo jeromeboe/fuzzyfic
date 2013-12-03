@@ -4,6 +4,11 @@ require_relative 'rule'
 module Fuzzyfic
 	class Set
 
+		attr_accessor :support
+
+		def initialize 
+		end
+
 		def and set
 			Condition.new self, set, :and
 		end
