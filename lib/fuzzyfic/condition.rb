@@ -19,7 +19,7 @@ module Fuzzyfic
 			img_left = @left.get v_left
 			img_right = @right.get v_right if !@right.nil?
 
-			case @premise.operator
+			case @operator
 			when nil
 				img_left
 			when :and
