@@ -3,15 +3,15 @@ require File.join(dir, 'fuzzyfic')
 
 # Variable input 1 : Service quality
 service_quality = {
-	bad: Fuzzyfic::Trapezoid.new([0,4], [0,3]),
+	bad: Fuzzyfic::Trapezoid.new([0,3], [0,2]),
 	good: Fuzzyfic::Trapezoid.new([3,7], [4,6]),
-	excellent: Fuzzyfic::Trapezoid.new([6,10], [7,9])
+	excellent: Fuzzyfic::Trapezoid.new([7,10], [6,10])
 }
 
 # Variable input 2 : Food
 food = {
-	execrable: Fuzzyfic::Trapezoid.new([0,4], [0,3]),
-	delicious: Fuzzyfic::Trapezoid.new([6,10], [7,10])
+	execrable: Fuzzyfic::Trapezoid.new([0,3], [0,1]),
+	delicious: Fuzzyfic::Trapezoid.new([7,10], [9,10])
 }
 
 # Variable output : Tips
@@ -30,4 +30,4 @@ rules.push service_quality[:excellent].or(nourriture[:delicious]).then tips[:hig
 
 
 # Compute
-Fuzzyfic::compute(rules, 7.83, 7.32)
+Fuzzyfic::Defuzzifier.cog(rules, 7.83, 7.32)
