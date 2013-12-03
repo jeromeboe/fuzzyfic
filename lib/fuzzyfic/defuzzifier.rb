@@ -29,7 +29,7 @@ module Fuzzyfic
 				# compute f(x) : get the maximum from all conclusion rules (as a fusion)
 				images = []
 				intermediate.each do |i|
-					images.push i.first.get(x)
+					images.push [i.first.get(x), i.last].min
 				end
 				fx = images.max
 

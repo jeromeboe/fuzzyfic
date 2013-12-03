@@ -24,10 +24,10 @@ tips = {
 
 # Rules
 rules = []
-rules.push service_quality[:bad].or(nourriture[:execrable]).then tips[:low]
+rules.push service_quality[:bad].or(food[:execrable]).then tips[:low]
 rules.push service_quality[:good].then tips[:average]
-rules.push service_quality[:excellent].or(nourriture[:delicious]).then tips[:high]
+rules.push service_quality[:excellent].or(food[:delicious]).then tips[:high]
 
 
 # Compute
-Fuzzyfic::Defuzzifier.cog(rules, 7.83, 7.32)
+Fuzzyfic::Defuzzifier.cog(rules, 10, 10)
