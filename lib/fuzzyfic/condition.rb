@@ -1,3 +1,5 @@
+require_relative 'rule'
+
 module Fuzzyfic
 	class Condition
 

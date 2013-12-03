@@ -1,4 +1,5 @@
 require_relative 'fuzzyfic/trapezoid.rb'
+require_relative 'fuzzyfic/triangle.rb'
 
 module FuzzyLogic
 

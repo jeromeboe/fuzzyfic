@@ -1,3 +1,6 @@
+require_relative 'condition'
+require_relative 'rule'
+
 module Fuzzyfic
 	class Set
 
@@ -16,7 +19,7 @@ module Fuzzyfic
 		end
 
 		# Must be overriden in sub-classes
-		def get value		
+		def get x		
 		end
 
 	end
