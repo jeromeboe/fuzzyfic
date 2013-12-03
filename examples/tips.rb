@@ -36,7 +36,7 @@ for i in (0...10)
 		v = Fuzzyfic::Defuzzifier.cog(rules, i, j)
 		puts "Nan : "+i.to_s+", "+j.to_s if v.nan?
 		puts "Nil : "+i.to_s+", "+j.to_s if v.nil?
-		mat[i][j] = v
+		mat[i][j] = v.round 2
 	end
 end
 p mat
