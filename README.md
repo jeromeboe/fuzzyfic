@@ -36,5 +36,5 @@ Fuzzyfic::Defuzzifier.cog(rules, 6.19, 8.42)# Print 19.85 => (service_quality=6.
 ```
 
 <p align="center">
-	![3D result](examples/tips.png "3D result")
+	<img src="examples/tips.png" alt="3D result" />
 </p>
