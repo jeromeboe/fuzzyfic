@@ -35,4 +35,4 @@ rules.push service_quality[:excellent].or(food[:delicious]).then tips[:high]
 Fuzzyfic::Defuzzifier.cog(rules, 6.19, 8.42)# Print 19.85 => (service_quality=6.19, food=8.42) => tips=19.85
 ```
 
-<center>![3D result](examples/tips.png "3D result")</center>
+->![3D result](examples/tips.png "3D result")<-
