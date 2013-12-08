@@ -3,9 +3,9 @@ require File.join(dir, 'fuzzyfic')
 
 # Input 1 : Service quality
 service_quality = {
-	bad: Fuzzyfic::Trapezoid.new([0,3], [0,2]), # => support=[0,3], kernel=[0,2]
-	good: Fuzzyfic::Trapezoid.new([3,7], [4,6]),
-	excellent: Fuzzyfic::Trapezoid.new([7,10], [6,10])
+	bad: Fuzzyfic::Gaussian.new([0,10], 0, 1.5), # => support=[0,10], center=0, width=1.5, using [exp(-((x-center)^2)/(2*width^2))]
+	good: Fuzzyfic::Gaussian.new([0,10], 5, 1.5),
+	excellent: Fuzzyfic::Gaussian.new([0,10], 10, 1.5)
 }
 
 # Input 2 : Food
@@ -30,4 +30,4 @@ rules.push service_quality[:excellent].or(food[:delicious]).then tips[:high]
 
 
 # Apply Rules, using Centroid/COG method
-Fuzzyfic::Defuzzifier.cog(rules, 6.19, 8.42)# Print 19.85 => (service_quality=6.19, food=8.42) => tips=19.85
+Fuzzyfic::Defuzzifier.cog(rules, 6.19, 8.42)# Print 19.97 => (service_quality=6.19, food=8.42) => tips=19.97
