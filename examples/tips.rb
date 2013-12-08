@@ -16,7 +16,7 @@ food = {
 
 # Output : Tips
 tips = {
-	low: Fuzzyfic::Triangle.new([0,10], 5), # => support=[0,10], kernel/peak=5
+	low: Fuzzyfic::Triangle.new([0,10], 5), # => support=[0,10], kernel/center/peak=5
 	average: Fuzzyfic::Triangle.new([10,20], 15),
 	high: Fuzzyfic::Triangle.new([20,30], 25)
 }

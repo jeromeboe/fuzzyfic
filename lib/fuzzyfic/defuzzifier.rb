@@ -7,8 +7,8 @@ module Fuzzyfic
 			rules.each do |r|
 				intermediate.push r.apply(i1, i2)
 			end
-
 			
+
 			## COG method (centroid)
 
 			# compute support interval
@@ -22,9 +22,10 @@ module Fuzzyfic
 			support_min = mins.min
 			support_max = maxs.max
 
+
 			# compute cog : \frac{\sum_{x \in support} x*f(x)}{\sum_{x \in support} f(x)}
 			num = denum = 0.0
-			for x in (support_min..support_max)
+			for x in (support_min..support_max).step(0.1)
 
 				# compute f(x) : get the maximum from all conclusion rules (as a fusion)
 				images = []
